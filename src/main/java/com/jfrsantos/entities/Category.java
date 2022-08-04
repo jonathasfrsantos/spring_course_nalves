@@ -61,6 +61,7 @@ public class Category implements Serializable{
 		
 	}
 
+	// não usar lombok em classes que farão parte de tabelas associativas
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
