@@ -11,6 +11,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
@@ -25,9 +27,11 @@ public class Payment implements Serializable {
 	private Long id;
 	private Instant moment;
 	
+	@JsonIgnore
 	@OneToOne
 	@MapsId            // na classe "dependente" que é o pagamento, a classe pagamento depende da classe order(pedido) para existir
 	private Order order;
+	
 	
 	public Payment() {
 		
